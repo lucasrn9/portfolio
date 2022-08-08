@@ -1,3 +1,39 @@
 {
-  "extends": "next/core-web-vitals"
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "node": true
+    },
+    "extends": [
+        "plugin:jest/recommended",
+        "plugin:jest/style",
+        "plugin:testing-library/react",
+        "plugin:react/recommended",
+        "airbnb",
+        "airbnb-typescript",
+        "prettier",
+        "next/core-web-vitals"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": "latest",
+        "sourceType": "module",
+        "project":"./tsconfig.json"
+    },
+    "plugins": [
+        "react",
+        "@typescript-eslint",
+        "jest",
+        "testing-library",
+        "prettier"
+    ],
+    "rules": {
+        "react/function-component-definition": ["error",{
+            "namedComponents": "arrow-function"
+          }],
+          "react/react-in-jsx-scope": "off"
+    }
 }
