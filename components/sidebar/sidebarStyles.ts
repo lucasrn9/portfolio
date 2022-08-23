@@ -1,7 +1,13 @@
 import styled from "styled-components";
 
+export const StyledSidebarWrapper = styled.div`
+      height: 100% ;
+      display: flex;
+      z-index: 999;
+      position: relative;
+`
+
 export const StyledSidebar = styled.aside<{ visible: boolean }>`
-  height: calc(100vh - 8rem);
   width: 130px;
   border-right: 1px solid #e4e3ec;
   display: flex;
@@ -9,17 +15,20 @@ export const StyledSidebar = styled.aside<{ visible: boolean }>`
   align-items: center;
   justify-content: space-between;
   padding: 4rem 0;
-  @media (max-width: 768px) {
-    padding: 2rem 0 0 0;
-    height: calc(100vh - 2rem);
-    justify-content: flex-start;
+  @media (max-width: 960px) {
     display: ${({ visible }) => (visible ? "flex" : "none")};
+  }
+  @media (max-width:1024px) {
+    justify-content: flex-start;
+  }
+  @media (max-height:610px) {
+    height: min-content ;
   }
 `;
 
 export const StyledNavbarIcon = styled.span`
   font-size: 1.8rem;
-  transition: color 0.2s ease;
+  transition: ${({theme})=>theme.transitions.color};
 `;
 
 export const StyledNavbar = styled.nav`
@@ -55,7 +64,7 @@ export const StyledCopyright = styled.div`
   align-items: center;
   justify-content: center;
   height: 113.66px;
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     display: none;
   }
 `;

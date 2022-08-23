@@ -67,6 +67,18 @@ a {
 
 /* ====================GLOBAL STYLES==================== */
 
+@media (max-width:425px) {
+	:root{
+		font-size: 13px ;
+	}
+
+}
+
+html,body,#__next{
+height:100% ;
+min-height:365px ;
+}
+
 html{
 	scroll-behavior: smooth ;
 }

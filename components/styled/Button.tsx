@@ -9,7 +9,7 @@ const buttonPush = keyframes`
 }
 `;
 
-const Button = styled.button`
+const StyledButton = styled.button`
   padding: 0.75rem 2rem;
   line-height: 1;
   border-radius: 1.875rem;
@@ -23,6 +23,11 @@ const Button = styled.button`
   &:hover {
     animation: ${buttonPush} 0.3s linear 1;
   }
+
+  @media (max-width:365px) {
+    font-size:0.9rem ;
+    padding: 0.75rem 1.3rem;
+  }
 `;
 
-export default Button;
+export default StyledButton;

@@ -2,7 +2,7 @@ const light = {
 colors: {
     primary: 'hsl(353,100%,65%)',
     title: 'hsl(244,24%,26%)',
-    secondary: 'hsl(274.5, 67.80%, 23.13%)',
+    secondary: 'hsl(244,24%,26%)',
     body: 'hsl(258,60%,98%)',
     container: '#fff'
 },
@@ -25,7 +25,10 @@ fontWeights: {
 boxShadow: {
 shadow: '0px 5px 20px 0px rgb(69 67 96 / 10%)'
 },
-borderRadius: '20px'
+borderRadius: '20px',
+transitions:{
+    color: 'color 0.2s ease'
+}
 }
 
 export default light

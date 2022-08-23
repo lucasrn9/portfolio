@@ -28,6 +28,9 @@ export interface DefaultTheme {
     boxShadow: {
     shadow: string
     },
-    borderRadius: string
+    borderRadius: string,
+    transitions: {
+        color: string
+    }
     }
 }
