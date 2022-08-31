@@ -1,4 +1,9 @@
 import styled from "styled-components";
+import StyledSection from '../styled/Section'
+
+export const StyledSectionCustom = styled(StyledSection)`
+min-height:480px ;
+`
 
 export const StyledSocialMedia = styled.div`
   font-size: 1.5rem;

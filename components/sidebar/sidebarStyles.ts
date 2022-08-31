@@ -1,15 +1,16 @@
 import styled from "styled-components";
 
 export const StyledSidebarWrapper = styled.div`
-      height: 100% ;
-      display: flex;
-      z-index: 999;
-      position: relative;
+      height:100% ;
+      position: fixed ;
+      z-index:1 ;
 `
 
 export const StyledSidebar = styled.aside<{ visible: boolean }>`
   width: 130px;
+  height: 100% ;
   border-right: 1px solid #e4e3ec;
+  background-color: ${({theme})=>theme.colors.body} ;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,7 +23,7 @@ export const StyledSidebar = styled.aside<{ visible: boolean }>`
     justify-content: flex-start;
   }
   @media (max-height:610px) {
-    height: min-content ;
+    overflow-x: scroll ;  
   }
 `;
 
@@ -65,6 +66,9 @@ export const StyledCopyright = styled.div`
   justify-content: center;
   height: 113.66px;
   @media (max-width: 1024px) {
+    display: none;
+  }
+  @media (max-height: 800px) {
     display: none;
   }
 `;

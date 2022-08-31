@@ -90,18 +90,18 @@ const StyledShapes = styled.div`
   }
 
   @media (max-height: 410px) {
-.s1{
-  left: 9%;
-}
-.s2{
-  left:13% ;
-}
-.s3{
-  left: 14% ;
-}
-.s4{
-  left: 11% ;
-}
+    .s1 {
+      left: 9%;
+    }
+    .s2 {
+      left: 13%;
+    }
+    .s3 {
+      left: 14%;
+    }
+    .s4 {
+      left: 11%;
+    }
   }
 
   @media (max-width: 375px) {
@@ -131,6 +131,10 @@ const StyledShapes = styled.div`
       left: 85%;
       bottom: 6%;
     }
+  }
+
+  @media (max-width: 233px) {
+    display: none;
   }
 `;
 

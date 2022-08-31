@@ -1,28 +1,29 @@
 import type { NextPage } from "next";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { useState } from "react";
 import Sidebar from "../components/sidebar/Sidebar";
 import HomeSection from "../components/homeSection/HomeSection";
-
-const StyledMain = styled.main<{ sidebarOpen: boolean }>`
-  width: calc(100% - 260px);
-  min-width: fit-content;
-  @media (max-width: 960px) {
-    width: 100%;
-    ${(props) =>
-      props.sidebarOpen &&
-      css`
-        width: calc(100% - 130px);
-        padding-left: 1rem;
-        padding-right: 1rem;
-      `}
-  }
-`;
+import AboutSection from "../components/aboutSection/AboutSection";
+import MenuToggle from "../components/menuToggle/MenuToggle";
 
 const StyledLayout = styled.div`
   display: flex;
-  width: 100vw;
-  height: 100%;
+`;
+
+const StyledMain = styled.main<{ sidebarOpen: boolean }>`
+  width: 100%;
+
+  @media (max-width: 1282px) {
+    padding-left: 130px;
+  }
+
+  @media (max-width: 960px) {
+    padding-left: ${({ sidebarOpen }) => (sidebarOpen ? "130px" : "0")};
+  }
+
+  @media (max-width: 900px) {
+    padding-right: 0;
+  }
 `;
 
 const Home: NextPage = () => {
@@ -32,9 +33,11 @@ const Home: NextPage = () => {
   };
   return (
     <StyledLayout>
-      <Sidebar showSidebar={showSidebar} toggleSidebar={toggleSidebar} />
+      <Sidebar showSidebar={showSidebar} />
+      <MenuToggle onClick={toggleSidebar} sidebarOpen={showSidebar} />
       <StyledMain sidebarOpen={showSidebar}>
         <HomeSection />
+        <AboutSection />
       </StyledMain>
     </StyledLayout>
   );

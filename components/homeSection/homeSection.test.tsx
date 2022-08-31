@@ -1,13 +1,18 @@
+/* eslint-disable react/jsx-props-no-spreading */
+/* eslint-disable jsx-a11y/alt-text */
 import { screen } from "@testing-library/react";
 import HomeSection from "./HomeSection";
 import renderWithTheme from "../../utils/tests/renderWithTheme";
 
+jest.mock("next/image", () => ({
+  __esModule: true,
+  default: (props: any) => <img {...props} />,
+}));
+
 describe("HomeSection", () => {
   it("should have a profile picture", () => {
     renderWithTheme(<HomeSection />);
-    const profilePicture = screen.getByAltText(
-      /Lucas Ribeiro profile picture/i
-    );
+    const profilePicture = screen.getByAltText(/lucas ribeiro/i);
     expect(profilePicture).toBeVisible();
   });
 
@@ -43,7 +48,7 @@ describe("HomeSection", () => {
 
   it("should have a contact button", () => {
     renderWithTheme(<HomeSection />);
-    const contactButton = screen.getByRole("button", { name: "contact" });
+    const contactButton = screen.getByRole("button", { name: "Contact Me" });
     expect(contactButton).toBeVisible();
   });
 });

@@ -74,9 +74,13 @@ a {
 
 }
 
-html,body,#__next{
+/* html,body,#__next{
 height:100% ;
-min-height:365px ;
+min-height:fit-content ;
+} */
+
+*{
+	box-sizing: border-box ;
 }
 
 html{

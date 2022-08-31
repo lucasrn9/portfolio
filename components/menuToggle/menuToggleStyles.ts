@@ -1,16 +1,18 @@
 import styled from "styled-components";
 
-const StyledMenuToggle = styled.button`
+const StyledMenuToggle = styled.button<{sidebarOpen:boolean}>`
   width: 45px;
   height: 45px;
   display: none;
-  position: absolute;
-  left:100% ;
+  position: fixed;
+  z-index:2 ;
+  left:${({sidebarOpen})=>sidebarOpen?'130px':'0'} ;
+  top:0 ;
   align-items: center;
   justify-content: center;
   font-size: 28px;
   color:${({theme})=>theme.colors.secondary} ;
-  background-color: ${({ theme }) => theme.colors.body};
+  background-color: transparent;
   @media (max-width: 960px) {
     display: flex;
   }

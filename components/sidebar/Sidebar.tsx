@@ -1,5 +1,4 @@
 import Logo from "../logo/Logo";
-import MenuToggle from "../menuToggle/MenuToggle";
 import {
   StyledCopyright,
   StyledNavbar,
@@ -9,7 +8,7 @@ import {
 } from "./sidebarStyles";
 import { SidebarProps } from "../../types/props/SidebarProps";
 
-const Sidebar = ({ showSidebar, toggleSidebar }: SidebarProps) => (
+const Sidebar = ({ showSidebar }: SidebarProps) => (
   <StyledSidebarWrapper>
     <StyledSidebar visible={showSidebar}>
       <Logo />
@@ -54,7 +53,6 @@ const Sidebar = ({ showSidebar, toggleSidebar }: SidebarProps) => (
       </StyledNavbar>
       <StyledCopyright>&copy; 2022 - 2023.</StyledCopyright>
     </StyledSidebar>
-    <MenuToggle onClick={toggleSidebar} sidebarOpen={showSidebar} />
   </StyledSidebarWrapper>
 );
 export default Sidebar;
