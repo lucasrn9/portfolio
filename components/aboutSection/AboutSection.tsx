@@ -1,9 +1,9 @@
 import Image from "next/image";
 import StyledButton from "../styled/Button";
 import avatarTwo from "../../public/assets/avatar-2.svg";
-import dotsBg from "../../public/assets/dots-bg.svg";
 import Skill from "../skill/Skill";
 import Badge from "../badge/Badge";
+import SectionTitle from "../sectionTitle/SectionTitle";
 import {
   StyledBadges,
   StyledContainerCustom,
@@ -12,16 +12,12 @@ import {
   StyledSectionCustom,
   StyledSkillsWrapper,
   StyledSpeechBubble,
-  StyledTitle,
 } from "./aboutSectionStyles";
 
 const AboutSection = () => (
   <StyledSectionCustom>
     <StyledContainerCustom>
-      <StyledTitle>
-        About Me
-        <div><Image src={dotsBg} alt="dots background"/></div>
-      </StyledTitle>
+      <SectionTitle>About Me</SectionTitle>
       <StyledInformation>
         <div>
           <Image src={avatarTwo} alt="about me" />

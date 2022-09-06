@@ -14,36 +14,22 @@ export const StyledSectionCustom = styled(StyledSection)`
 export const StyledContainerCustom = styled(StyledContainer)`
   width: 100%;
   height: 100%;
-  padding-top: 150px;
-  display: block;
+  display:flex;
+  justify-content: center ;
+  align-items: flex-start ;
   padding-left: 20%;
   padding-right: 10%;
 
   @media (max-width: 1282px) {
     display: flex;
     align-items: center;
-    justify-content: center;
     padding-left: 0;
     padding-right: 0;
     padding-top: 80px;
   }
 `;
 
-export const StyledTitle = styled.h1`
-position:relative;
-div{
-  position: absolute ;
-  left:0;
-  top:0;
-  transform:translateX(-50%) translateY(-30%);
-  @media (max-width:1282px) {
-    display:none ;
-  }
-}
-`
-
 export const StyledInformation = styled.div`
-  margin-top: 4rem;
   display: flex;
   justify-content: space-between;
 

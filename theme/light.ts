@@ -4,7 +4,8 @@ colors: {
     title: 'hsl(244,24%,26%)',
     secondary: 'hsl(244,24%,26%)',
     body: 'hsl(258,60%,98%)',
-    container: '#fff'
+    container: '#fff',
+    bubbles:'#fff'
 },
 fontFamilies: {
     regular: 'Rubik, sans-serif', // might need single quotes around rubik

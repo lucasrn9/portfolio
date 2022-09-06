@@ -5,6 +5,7 @@ import Sidebar from "../components/sidebar/Sidebar";
 import HomeSection from "../components/homeSection/HomeSection";
 import AboutSection from "../components/aboutSection/AboutSection";
 import MenuToggle from "../components/menuToggle/MenuToggle";
+import AcademicSection from "../components/academicSection/AcademicSection";
 
 const StyledLayout = styled.div`
   display: flex;
@@ -38,6 +39,7 @@ const Home: NextPage = () => {
       <StyledMain sidebarOpen={showSidebar}>
         <HomeSection />
         <AboutSection />
+        <AcademicSection />
       </StyledMain>
     </StyledLayout>
   );

@@ -7,7 +7,7 @@ const MenuToggle = ({ onClick, sidebarOpen }: MenuToggleProps) => (
     data-testid="menuToggle"
     sidebarOpen={sidebarOpen}
   >
-    <span className={sidebarOpen ? "icon-close" : "icon-menu"} />
+    <span data-testid="menuToggleIcon" className={sidebarOpen ? "icon-close" : "icon-menu"} />
   </StyledMenuToggle>
 );
 

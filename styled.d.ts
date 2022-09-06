@@ -7,7 +7,8 @@ export interface DefaultTheme {
         title: string,
         secondary: string,
         body: string,
-        container: string
+        container: string,
+        bubbles:string
     },
     fontFamilies: {
         regular: string // might need single quotes around rubik
