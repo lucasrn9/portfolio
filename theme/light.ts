@@ -3,6 +3,7 @@ colors: {
     primary: 'hsl(353,100%,65%)',
     title: 'hsl(244,24%,26%)',
     secondary: 'hsl(244,24%,26%)',
+    tertiary: 'hsl(236,79%,71%)',
     body: 'hsl(258,60%,98%)',
     container: '#fff',
     bubbles:'#fff'

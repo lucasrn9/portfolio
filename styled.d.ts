@@ -6,6 +6,7 @@ export interface DefaultTheme {
         primary: string,
         title: string,
         secondary: string,
+        tertiary: string,
         body: string,
         container: string,
         bubbles:string
