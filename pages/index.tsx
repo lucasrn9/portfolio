@@ -1,4 +1,4 @@
-import type { GetStaticProps} from "next";
+import type { GetStaticProps } from "next";
 import styled from "styled-components";
 import { useState } from "react";
 import Sidebar from "../components/sidebar/Sidebar";
@@ -11,6 +11,7 @@ import { GithubRepositorie } from "../types/repositories/GithubRepositorie";
 import { OriginalRepo } from "../types/repositories/OriginalRepo";
 import { RepoNewValues } from "../types/repositories/RepoNewValues";
 import { HomePageProps } from "../types/props/HomePageProps";
+import GetInTouchSection from "../components/getInTouchSection/GetInTouchSection";
 
 const StyledLayout = styled.div`
   display: flex;
@@ -46,6 +47,7 @@ const Home = ({ repos }: HomePageProps) => {
         <AboutSection />
         <AcademicSection />
         <RecentWorksSection repos={repos} />
+        <GetInTouchSection />
       </StyledMain>
     </StyledLayout>
   );
@@ -53,7 +55,9 @@ const Home = ({ repos }: HomePageProps) => {
 export default Home;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const res = await fetch("https://api.github.com/users/lucasrn9/repos?sort=created");
+  const res = await fetch(
+    "https://api.github.com/users/lucasrn9/repos?sort=created"
+  );
   const reposList: GithubRepositorie[] = await res.json();
   const formatedRepos = reposList.map((repo) => ({
     name: repo.name,
