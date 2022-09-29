@@ -24,8 +24,8 @@ const StyledButton = styled.button`
     animation: ${buttonPush} 0.3s linear 1;
   }
 
-  @media (max-width:365px) {
-    font-size:0.9rem ;
+  @media (max-width: 365px) {
+    font-size: 0.9rem;
     padding: 0.75rem 1.3rem;
   }
 `;

@@ -8,7 +8,7 @@ import {
 } from "./academicSectionStyles";
 
 const AcademicSection = () => (
-  <StyledSectionCustom>
+  <StyledSectionCustom id="academic">
     <StyledContainerCustom>
       <SectionTitle disableBg>Academic</SectionTitle>
       <Bubble>

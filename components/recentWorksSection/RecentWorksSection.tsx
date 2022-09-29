@@ -158,7 +158,7 @@ const RecentWorksSection = ({ repos }: RecentWorksSectionProps) => {
   }
 
   return (
-    <StyledSectionCustom>
+    <StyledSectionCustom id="works">
       <StyledContainerCustom>
         <SectionTitle>Recent Works</SectionTitle>
         <StyledFilters>

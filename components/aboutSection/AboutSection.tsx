@@ -15,7 +15,7 @@ import {
 } from "./aboutSectionStyles";
 
 const AboutSection = () => (
-  <StyledSectionCustom>
+  <StyledSectionCustom id="about">
     <StyledContainerCustom>
       <SectionTitle>About Me</SectionTitle>
       <StyledInformation>

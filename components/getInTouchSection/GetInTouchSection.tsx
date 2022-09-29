@@ -68,7 +68,7 @@ const GetInTouchSection = () => {
   };
 
   return (
-    <StyledSectionCustom>
+    <StyledSectionCustom id="getintouch">
       <StyledContainerCustom>
         <SectionTitle>Get In Touch</SectionTitle>
         <StyledContentWrapper>

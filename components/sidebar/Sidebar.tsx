@@ -15,37 +15,27 @@ const Sidebar = ({ showSidebar }: SidebarProps) => (
       <StyledNavbar>
         <ul>
           <li>
-            <a href="https://www.google.com">
+            <a href="#home">
               <StyledNavbarIcon className="icon-home" />
             </a>
           </li>
           <li>
-            <a href="https://www.google.com">
+            <a href="#about">
               <StyledNavbarIcon className="icon-user-following" />
             </a>
           </li>
           <li>
-            <a href="https://www.google.com">
-              <StyledNavbarIcon className="icon-briefcase" />
-            </a>
-          </li>
-          <li>
-            <a href="https://www.google.com">
+            <a href="#academic">
               <StyledNavbarIcon className="icon-graduation" />
             </a>
           </li>
           <li>
-            <a href="https://www.google.com">
+            <a href="#works">
               <StyledNavbarIcon className="icon-layers" />
             </a>
           </li>
           <li>
-            <a href="https://www.google.com">
-              <StyledNavbarIcon className="icon-note" />
-            </a>
-          </li>
-          <li>
-            <a href="https://www.google.com">
+            <a href="#getintouch">
               <StyledNavbarIcon className="icon-bubbles" />
             </a>
           </li>

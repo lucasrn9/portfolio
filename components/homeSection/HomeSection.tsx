@@ -9,14 +9,14 @@ import {
   StyledName,
   StyledOccupation,
   StyledSocialMedia,
+  StyledContactMe,
 } from "./homeSectionStyles";
 import StyledContainer from "../styled/Container";
-import StyledButton from "../styled/Button";
 import Shapes from "../shapes/Shapes";
 import Mouse from "../mouse/Mouse";
 
 const HomeSection = () => (
-  <StyledSectionCustom>
+  <StyledSectionCustom id="home">
     <Shapes />
     <StyledContainer>
       <StyledImageWrapper>
@@ -25,17 +25,25 @@ const HomeSection = () => (
       <StyledName>Lucas Ribeiro</StyledName>
       <StyledOccupation>I&apos;m a Front-End developer</StyledOccupation>
       <StyledSocialMedia>
-        <a href="https://github.com/lucasrn9">
+        <a href="https://github.com/lucasrn9" target="_blank" rel="noreferrer">
           <FontAwesomeIcon icon={faGithub} />
         </a>
-        <a href="https://www.linkedin.com/in/lucas-ribeiro-85487920b/">
+        <a
+          href="https://www.linkedin.com/in/lucas-ribeiro-85487920b/"
+          target="_blank"
+          rel="noreferrer"
+        >
           <FontAwesomeIcon icon={faLinkedin} />
         </a>
-        <a href="#contact">
+        <a
+          href="https://mail.google.com/mail/u/0/?fs=1&to=lucas.rn00@gmail.com&tf=cm"
+          target="_blank"
+          rel="noreferrer"
+        >
           <FontAwesomeIcon icon={faEnvelope} />
         </a>
       </StyledSocialMedia>
-      <StyledButton type="button">Contact Me</StyledButton>
+      <StyledContactMe href="#getintouch">Contact Me</StyledContactMe>
       <Mouse />
     </StyledContainer>
   </StyledSectionCustom>
