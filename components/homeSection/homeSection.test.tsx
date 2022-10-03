@@ -43,7 +43,10 @@ describe("HomeSection", () => {
       "https://www.linkedin.com/in/lucas-ribeiro-85487920b/"
     );
     expect(gmail).toBeVisible();
-    expect(gmail).toHaveAttribute("href", "#contact");
+    expect(gmail).toHaveAttribute(
+      "href",
+      "https://mail.google.com/mail/u/0/?fs=1&to=lucas.rn00@gmail.com&tf=cm"
+    );
   });
 
   it("should have a contact button", () => {

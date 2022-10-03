@@ -43,7 +43,9 @@ const HomeSection = () => (
           <FontAwesomeIcon icon={faEnvelope} />
         </a>
       </StyledSocialMedia>
-      <StyledContactMe href="#getintouch">Contact Me</StyledContactMe>
+      <StyledContactMe role="button" href="#getintouch">
+        Contact Me
+      </StyledContactMe>
       <Mouse />
     </StyledContainer>
   </StyledSectionCustom>

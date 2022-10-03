@@ -4,10 +4,10 @@ import { StyledSidebar } from "./sidebarStyles";
 import renderWithTheme from "../../utils/tests/renderWithTheme";
 
 describe("Sidebar", () => {
-  it("should render 7 navbar items", () => {
+  it("should render 5 navbar items", () => {
     renderWithTheme(<Sidebar showSidebar />);
     const navbarItems = screen.getAllByRole("listitem");
-    expect(navbarItems).toHaveLength(7);
+    expect(navbarItems).toHaveLength(5);
   });
 
   it("should render the website logo", () => {

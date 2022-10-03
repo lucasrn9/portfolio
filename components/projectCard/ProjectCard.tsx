@@ -31,13 +31,17 @@ const ProjectCard = ({
     <StyledBubbleCustom>
       <StyledBubbleWrapper>
         <StyledToggleContent
+          role="button"
           isActive={isActive}
           className={isActive ? "icon-close" : "icon-arrow-down"}
           onClick={toggleIsActive}
         />
         <StyledProjectImageWrapper>
           <Image
-            src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Placeholder_view_vector.svg"
+            src={
+              image ||
+              "https://upload.wikimedia.org/wikipedia/commons/3/3f/Placeholder_view_vector.svg"
+            }
             alt={name}
             layout="fill"
           />

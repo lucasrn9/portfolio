@@ -12,6 +12,7 @@ import { OriginalRepo } from "../types/repositories/OriginalRepo";
 import { RepoNewValues } from "../types/repositories/RepoNewValues";
 import { HomePageProps } from "../types/props/HomePageProps";
 import GetInTouchSection from "../components/getInTouchSection/GetInTouchSection";
+import imagesAndSites from "../data/repos/imagesAndSites";
 
 const StyledLayout = styled.div`
   display: flex;
@@ -56,7 +57,7 @@ export default Home;
 
 export const getStaticProps: GetStaticProps = async () => {
   const res = await fetch(
-    "https://api.github.com/users/lucasrn9/repos?sort=created"
+    "https://api.github.com/users/lucasrn9/repos"
   );
   const reposList: GithubRepositorie[] = await res.json();
   const formatedRepos = reposList.map((repo) => ({
@@ -87,10 +88,10 @@ export const getStaticProps: GetStaticProps = async () => {
     return newRepos;
   };
 
-  const reposWithNewData = addImgAndWebsiteToRepos(formatedRepos, [
-    { name: "todo-list", image: "img1", website_link: "site1" },
-    { name: "meetups", image: "img2", website_link: "site2" },
-  ]);
+  const reposWithNewData = addImgAndWebsiteToRepos(
+    formatedRepos,
+    imagesAndSites
+  );
 
   return {
     props: {

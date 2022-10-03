@@ -11,15 +11,26 @@ jest.mock("next/image", () => ({
   default: (props: any) => <img {...props} />,
 }));
 
+const reposMock = [
+  {
+    name: "test name",
+    description: "test description",
+    tag: [],
+    image: "test img",
+    repo_link: "testlink",
+    website_link: "testwebsitelink",
+  },
+];
+
 describe("RecentWorksSection", () => {
   it("should render the section title", () => {
-    renderWithTheme(<RecentWorksSection />);
+    renderWithTheme(<RecentWorksSection repos={reposMock} />);
     const title = screen.getByRole("heading", { name: /Recent Works/ });
     expect(title).toBeVisible();
   });
 
   it("should have 5 filters", () => {
-    renderWithTheme(<RecentWorksSection />);
+    renderWithTheme(<RecentWorksSection repos={reposMock} />);
     const everything = screen.getByText("Everything");
     const next = screen.getByText("Next");
     const react = screen.getByText("React");
@@ -33,7 +44,7 @@ describe("RecentWorksSection", () => {
   });
 
   it("should start with the everything filter selected", () => {
-    renderWithTheme(<RecentWorksSection />);
+    renderWithTheme(<RecentWorksSection repos={reposMock} />);
     const everythingFilter = screen.getByText("Everything");
     expect(everythingFilter).toBeVisible();
     expect(everythingFilter).toHaveStyle(
@@ -42,7 +53,7 @@ describe("RecentWorksSection", () => {
   });
 
   it("should unselect the everything filter when you select any other filter", async () => {
-    renderWithTheme(<RecentWorksSection />);
+    renderWithTheme(<RecentWorksSection repos={reposMock} />);
     const user = userEvent.setup();
     const everythingFilter = screen.getByText("Everything");
     const nextFilter = screen.getByText("Next");
@@ -67,7 +78,7 @@ describe("RecentWorksSection", () => {
   });
 
   it("should unselect all the other filters when the everything filter is selected", async () => {
-    renderWithTheme(<RecentWorksSection />);
+    renderWithTheme(<RecentWorksSection repos={reposMock} />);
     const user = userEvent.setup();
     const everythingFilter = screen.getByText("Everything");
     const nextFilter = screen.getByText("Next");

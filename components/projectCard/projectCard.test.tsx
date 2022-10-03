@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable jsx-a11y/alt-text */
 import { screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import renderWithTheme from "../../utils/tests/renderWithTheme";
 import ProjectCard from "./ProjectCard";
 
@@ -10,7 +11,8 @@ jest.mock("next/image", () => ({
 }));
 
 describe("ProjectCard", () => {
-  it("should render the project name and description", () => {
+  it("should render the project name and description", async () => {
+    const user = userEvent.setup();
     renderWithTheme(
       <ProjectCard
         name="Project test name"
@@ -21,13 +23,16 @@ describe("ProjectCard", () => {
         siteLink="https://www.google.com"
       />
     );
+    const toggleContentButton = screen.getByRole("button");
+    await user.click(toggleContentButton);
     const name = screen.getByRole("heading", { name: "Project test name" });
     const description = screen.getByText("Project test description");
     expect(name).toBeVisible();
     expect(description).toBeVisible();
   });
 
-  it("should render the project tag", () => {
+  it("should render the project tag", async () => {
+    const user = userEvent.setup();
     renderWithTheme(
       <ProjectCard
         name="Project test name"
@@ -38,6 +43,8 @@ describe("ProjectCard", () => {
         siteLink="https://www.google.com"
       />
     );
+    const toggleContentButton = screen.getByRole("button");
+    await user.click(toggleContentButton);
     const tag = screen.getByText("next");
     expect(tag).toBeVisible();
   });
@@ -57,7 +64,8 @@ describe("ProjectCard", () => {
     expect(image).toBeVisible();
   });
 
-  it("should render a button with a link to the project repository", () => {
+  it("should render a button with a link to the project repository", async () => {
+    const user = userEvent.setup();
     renderWithTheme(
       <ProjectCard
         name="Project test name"
@@ -68,11 +76,14 @@ describe("ProjectCard", () => {
         siteLink="https://www.google.com"
       />
     );
+    const toggleContentButton = screen.getByRole("button");
+    await user.click(toggleContentButton);
     const repoButton = screen.getByTestId("repo-button");
     expect(repoButton).toBeVisible();
   });
 
-  it("should render a button with a link to the project website", () => {
+  it("should render a button with a link to the project website", async () => {
+    const user = userEvent.setup();
     renderWithTheme(
       <ProjectCard
         name="Project test name"
@@ -83,6 +94,8 @@ describe("ProjectCard", () => {
         siteLink="https://www.google.com"
       />
     );
+    const toggleContentButton = screen.getByRole("button");
+    await user.click(toggleContentButton);
     const websiteButton = screen.getByTestId("website-button");
     expect(websiteButton).toBeVisible();
   });
@@ -98,6 +111,6 @@ describe("ProjectCard", () => {
       />
     );
     const websiteButton = screen.getByTestId("website-button");
-    expect(websiteButton).toBeVisible();
+    expect(websiteButton).not.toBeVisible();
   });
 });

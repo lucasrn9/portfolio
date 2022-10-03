@@ -10,29 +10,21 @@ export const StyledBubbleCustom = styled(Bubble)`
   }
 
   @media (min-width: 1024px) {
+    width: 100%;
+  }
+
+  @media (min-width: 1100px) {
     width: 47%;
-    margin-right: 1.8rem;
+        margin-right: 1.8rem;
 
     &:nth-child(even) {
       margin-right: 0;
     }
-  }
-
-  @media (min-width: 1283px) {
-    width: 40%;
   }
 
   @media (min-width: 1550px) {
-    width: 29%;
+    width: 47% ;
     height:320px ;
-
-    &:nth-child(even) {
-      margin-right: 1.8rem;
-    }
-
-    &:nth-child(3n + 3) {
-      margin-right: 0;
-    }
   }
 `;
 
@@ -44,7 +36,7 @@ export const StyledContent = styled.div<{ isActive: boolean }>`
   padding: 1.9rem 1.5rem;
   position: absolute;
   top: 0;
-  background-color: hsla(236, 79%, 71%, 85%);
+  background-color: hsla(236, 79%, 71%, 98%);
   border-radius: 20px;
   transition: opacity 0.12s ease-in;
 
