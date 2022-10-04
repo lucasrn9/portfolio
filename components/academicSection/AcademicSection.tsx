@@ -14,16 +14,15 @@ const AcademicSection = () => (
       <Bubble>
         <StyledBubbleWrapper>
           <AcademicExperience
-            title="Técnologo em Informática para Negócios - FATEC SBC"
-            description="Algoritmos e Lógica de Programação, Sistemas Operacionais, Modelagem de Bancos de Dados, C++ , JAVA"
+            title="Technologist in Informatics for Business - FATEC SBC"
+            description="Algorithms and Programming Logic, Operational Systems, Database Modeling, C++ , JAVA"
             startYear="2019"
             conclusionYear="2022"
             uncompleted
           />
           <AcademicExperience
-            title="Inglês - Alt Idiomas"
-            description="Escrever e Responder a e-mails, Elaborar apresentações, Conversações de
-            nível intermediário."
+            title="English - Alt Idiomas"
+            description="Write and Reply to Emails, Create Presentations, intermediate level conversations."
             startYear="2017"
             conclusionYear="2022"
           />
@@ -34,22 +33,22 @@ const AcademicSection = () => (
             conclusionYear="2021"
           />
           <AcademicExperience
-            title="Excel Intermediário e Excel Avançado - Fundação Bradesco"
-            description="Elaborar Relatórios, Planilhas e DashBoards utilizando as principais funçoes e filtros do excel (20h&30h)"
+            title="Excel Intermediate & Excel Advanced - Fundação Bradesco"
+            description="Create Reports, Spreadsheets and Dashboards using excel's main functions and filters (20h&30h)"
             startYear="2021"
             conclusionYear="2021"
           />
           <AcademicExperience
-            title="Hardware e Manutenção de Computadores - Líder Centro de Profissões"
-            description="Manutenção de Problemas de Hardware e Software, Instalação, formatação
-            e otimização de Sistemas Operacionais."
+            title="Hardware and Computers Maintenance - Líder Centro de Profissões"
+            description="Hardware and Software Maintenance, Operational Systems Installation, Formatting
+            and Optimization."
             startYear="2018"
             conclusionYear="2020"
           />
           <AcademicExperience
-            title="Windows, Office, Digitação, Secretariado - OnByte Formação Profissional"
-            description="Elaborar Relatórios, Planilhas, DashBoards, Artigos e Apresentações
-            utilizando as principais ferramentas do pacote Microsoft Office."
+            title="Windows, Office, Typing, Secretariat - OnByte Formação Profissional"
+            description="Create Reports, Spreadsheets, DashBoards, Articles and Presentations
+            using Microsoft Office's main tools."
             startYear="2018"
             conclusionYear="2019"
           />

@@ -18,20 +18,20 @@ describe("AcademicSection", () => {
   it("should render 6 academic experiences", () => {
     renderWithTheme(<AcademicSection />);
     const academicExperienceOne = screen.getByText(
-      "Técnologo em Informática para Negócios - FATEC SBC"
+      "Technologist in Informatics for Business - FATEC SBC"
     );
-    const academicExperienceTwo = screen.getByText("Inglês - Alt Idiomas");
+    const academicExperienceTwo = screen.getByText("English - Alt Idiomas");
     const academicExperienceThree = screen.getByText(
       "Bootcamp MRV Front End SPA Developer - Digital Innovation One"
     );
     const academicExperienceFour = screen.getByText(
-      "Excel Intermediário e Excel Avançado - Fundação Bradesco"
+      "Excel Intermediate & Excel Advanced - Fundação Bradesco"
     );
     const academicExperienceFive = screen.getByText(
-      "Hardware e Manutenção de Computadores - Líder Centro de Profissões"
+      "Hardware and Computers Maintenance - Líder Centro de Profissões"
     );
     const academicExperienceSix = screen.getByText(
-      "Windows, Office, Digitação, Secretariado - OnByte Formação Profissional"
+      "Windows, Office, Typing, Secretariat - OnByte Formação Profissional"
     );
     expect(academicExperienceOne).toBeVisible();
     expect(academicExperienceTwo).toBeVisible();
