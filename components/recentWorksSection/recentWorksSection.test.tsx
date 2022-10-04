@@ -19,6 +19,7 @@ const reposMock = [
     image: "test img",
     repo_link: "testlink",
     website_link: "testwebsitelink",
+    created_at: "2022-10-04",
   },
 ];
 

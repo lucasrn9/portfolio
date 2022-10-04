@@ -1,6 +1,26 @@
 import styled, { css } from "styled-components";
 import Bubble from "../styled/Bubble";
 
+export const StyledContent = styled.div<{ isActive: boolean }>`
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+  padding: 1.9rem 1.5rem;
+  position: absolute;
+  top: 0;
+  background-color: hsla(236, 79%, 71%, 98%);
+  border-radius: 20px;
+  transition: opacity 0.12s ease-in;
+
+  ${({ isActive }) =>
+    isActive &&
+    css`
+      visibility: visible;
+      opacity: 1;
+    `}
+`;
+
 export const StyledBubbleCustom = styled(Bubble)`
   padding: 0;
   height: 270px;
@@ -28,25 +48,7 @@ export const StyledBubbleCustom = styled(Bubble)`
   }
 `;
 
-export const StyledContent = styled.div<{ isActive: boolean }>`
-  width: 100%;
-  height: 100%;
-  visibility: hidden;
-  opacity: 0;
-  padding: 1.9rem 1.5rem;
-  position: absolute;
-  top: 0;
-  background-color: hsla(236, 79%, 71%, 98%);
-  border-radius: 20px;
-  transition: opacity 0.12s ease-in;
 
-  ${({ isActive }) =>
-    isActive &&
-    css`
-      visibility: visible;
-      opacity: 1;
-    `}
-`;
 
 export const StyledBubbleWrapper = styled.div`
   width: 100%;
@@ -56,6 +58,14 @@ export const StyledBubbleWrapper = styled.div`
   * {
     color: white;
   }
+  @media (min-width:961px){
+  &:hover{
+    ${StyledContent}{
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
 `;
 
 export const StyledProjectImageWrapper = styled.div`
@@ -146,4 +156,8 @@ export const StyledToggleContent = styled.span<{ isActive: boolean }>`
       background-color: transparent;
       margin-top: 0.3rem;
     `}
+
+    @media (min-width:961px){
+      display: none ;
+    }
 `;

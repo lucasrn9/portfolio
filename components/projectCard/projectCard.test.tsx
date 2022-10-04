@@ -11,7 +11,24 @@ jest.mock("next/image", () => ({
 }));
 
 describe("ProjectCard", () => {
-  it("should render the project name and description", async () => {
+  it("should display a toggle content button only on screens smaller than 961px", () => {
+    renderWithTheme(
+      <ProjectCard
+        name="Project test name"
+        description="Project test description"
+        tag="next"
+        image="/testImg"
+        repoLink="https://www.github.com"
+        siteLink="https://www.google.com"
+      />
+    );
+    const toggleContentButton = screen.getByRole("button");
+    expect(toggleContentButton).toHaveStyleRule("display", "none", {
+      media: "(min-width:961px)",
+    });
+  });
+
+  it("should render the project name, description and tag when the toggle content button is clicked", async () => {
     const user = userEvent.setup();
     renderWithTheme(
       <ProjectCard
@@ -27,26 +44,10 @@ describe("ProjectCard", () => {
     await user.click(toggleContentButton);
     const name = screen.getByRole("heading", { name: "Project test name" });
     const description = screen.getByText("Project test description");
-    expect(name).toBeVisible();
-    expect(description).toBeVisible();
-  });
-
-  it("should render the project tag", async () => {
-    const user = userEvent.setup();
-    renderWithTheme(
-      <ProjectCard
-        name="Project test name"
-        description="Project test description"
-        tag="next"
-        image="/testImg"
-        repoLink="https://www.github.com"
-        siteLink="https://www.google.com"
-      />
-    );
-    const toggleContentButton = screen.getByRole("button");
-    await user.click(toggleContentButton);
     const tag = screen.getByText("next");
     expect(tag).toBeVisible();
+    expect(name).toBeVisible();
+    expect(description).toBeVisible();
   });
 
   it("should render the project image", () => {
@@ -82,7 +83,7 @@ describe("ProjectCard", () => {
     expect(repoButton).toBeVisible();
   });
 
-  it("should render a button with a link to the project website", async () => {
+  it("should render a button with a link to the project website when the toggle content button is clicked", async () => {
     const user = userEvent.setup();
     renderWithTheme(
       <ProjectCard
