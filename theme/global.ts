@@ -74,10 +74,10 @@ a {
 
 }
 
-/* html,body,#__next{
+html,body,#__next{
 height:100% ;
 min-height:fit-content ;
-} */
+}
 
 *{
 	box-sizing: border-box ;

@@ -2,8 +2,8 @@ import styled, { keyframes } from "styled-components";
 import StyledSection from '../styled/Section'
 
 export const StyledSectionCustom = styled(StyledSection)`
+height: 100% ;
 min-height:480px ;
-
 `
 
 export const StyledSocialMedia = styled.div`

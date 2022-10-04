@@ -16,6 +16,7 @@ import imagesAndSites from "../data/repos/imagesAndSites";
 
 const StyledLayout = styled.div`
   display: flex;
+  height: 100%;
 `;
 
 const StyledMain = styled.main<{ sidebarOpen: boolean }>`
