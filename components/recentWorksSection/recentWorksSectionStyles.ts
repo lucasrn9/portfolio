@@ -53,7 +53,7 @@ export const StyledFilterOption = styled.span<{ selected?: boolean }>`
   cursor: pointer;
   text-align: center;
 
-  &:focus {
+  &:focus-visible {
     background-color: ${({ theme }) => theme.colors.tertiary};
     color: white;
   }
@@ -98,7 +98,7 @@ export const StyledViewMoreButton = styled.button`
   cursor: pointer;
   margin: 0 auto;
 
-  &:focus{
+  &:focus-visible{
     border: 2px solid black ;
   }
 
