@@ -15,27 +15,27 @@ const Sidebar = ({ showSidebar }: SidebarProps) => (
       <StyledNavbar>
         <ul>
           <li>
-            <a href="#home">
+            <a href="#home" aria-label="Go to home section">
               <StyledNavbarIcon className="icon-home" />
             </a>
           </li>
           <li>
-            <a href="#about">
+            <a href="#about" aria-label="Go to about section ">
               <StyledNavbarIcon className="icon-user-following" />
             </a>
           </li>
           <li>
-            <a href="#academic">
+            <a href="#academic" aria-label="Go to academic section">
               <StyledNavbarIcon className="icon-graduation" />
             </a>
           </li>
           <li>
-            <a href="#works">
+            <a href="#works" aria-label="Go to recent works section">
               <StyledNavbarIcon className="icon-layers" />
             </a>
           </li>
           <li>
-            <a href="#getintouch">
+            <a href="#getintouch" aria-label="Go to get in touch section">
               <StyledNavbarIcon className="icon-bubbles" />
             </a>
           </li>

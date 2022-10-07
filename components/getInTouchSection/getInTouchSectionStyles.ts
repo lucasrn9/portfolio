@@ -27,7 +27,7 @@ export const StyledContainerCustom = styled(StyledContainer)`
   }
 `;
 
-export const StyledSubtitle = styled.h3`
+export const StyledSubtitle = styled.h2`
   font-size: 1.2rem;
   margin-bottom: 0.6rem;
   text-align: center;

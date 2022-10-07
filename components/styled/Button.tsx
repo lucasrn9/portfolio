@@ -19,7 +19,9 @@ const StyledButton = styled.button`
   display: inline-block;
   background-color: ${({ theme }) => theme.colors.primary};
   font-weight: ${({ theme }) => theme.fontWeights.bold};
-
+  &:focus{
+    border: 2px solid black;
+  }
   &:hover {
     animation: ${buttonPush} 0.3s linear 1;
   }

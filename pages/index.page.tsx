@@ -1,39 +1,23 @@
 import type { GetStaticProps } from "next";
-import styled from "styled-components";
 import { useState } from "react";
-import Sidebar from "../components/sidebar/Sidebar";
-import HomeSection from "../components/homeSection/HomeSection";
-import AboutSection from "../components/aboutSection/AboutSection";
-import RecentWorksSection from "../components/recentWorksSection/RecentWorksSection";
-import MenuToggle from "../components/menuToggle/MenuToggle";
-import AcademicSection from "../components/academicSection/AcademicSection";
-import { GithubRepositorie } from "../types/repositories/GithubRepositorie";
-import { OriginalRepo } from "../types/repositories/OriginalRepo";
-import { RepoNewValues } from "../types/repositories/RepoNewValues";
+import Head from "next/head";
+import {
+  Sidebar,
+  HomeSection,
+  AboutSection,
+  RecentWorksSection,
+  MenuToggle,
+  AcademicSection,
+  GetInTouchSection,
+} from "../components";
+import {
+  GithubRepositorie,
+  OriginalRepo,
+  RepoNewValues,
+} from "../types/repositories";
 import { HomePageProps } from "../types/props/HomePageProps";
-import GetInTouchSection from "../components/getInTouchSection/GetInTouchSection";
 import imagesAndSites from "../data/repos/imagesAndSites";
-
-const StyledLayout = styled.div`
-  display: flex;
-  height: 100%;
-`;
-
-const StyledMain = styled.main<{ sidebarOpen: boolean }>`
-  width: 100%;
-
-  @media (max-width: 1282px) {
-    padding-left: 130px;
-  }
-
-  @media (max-width: 960px) {
-    padding-left: ${({ sidebarOpen }) => (sidebarOpen ? "130px" : "0")};
-  }
-
-  @media (max-width: 900px) {
-    padding-right: 0;
-  }
-`;
+import { StyledLayout, StyledMain } from "./indexStyles";
 
 const Home = ({ repos }: HomePageProps) => {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -41,17 +25,26 @@ const Home = ({ repos }: HomePageProps) => {
     setShowSidebar((prevState) => !prevState);
   };
   return (
-    <StyledLayout>
-      <Sidebar showSidebar={showSidebar} />
-      <MenuToggle onClick={toggleSidebar} sidebarOpen={showSidebar} />
-      <StyledMain sidebarOpen={showSidebar}>
-        <HomeSection />
-        <AboutSection />
-        <AcademicSection />
-        <RecentWorksSection repos={repos} />
-        <GetInTouchSection />
-      </StyledMain>
-    </StyledLayout>
+    <>
+      <Head>
+        <title>lucasrn9</title>
+        <meta
+          name="description"
+          content="lucas ribeiro's personal website and portfolio"
+        />
+      </Head>
+      <StyledLayout>
+        <Sidebar showSidebar={showSidebar} />
+        <MenuToggle onClick={toggleSidebar} sidebarOpen={showSidebar} />
+        <StyledMain sidebarOpen={showSidebar}>
+          <HomeSection />
+          <AboutSection />
+          <AcademicSection />
+          <RecentWorksSection repos={repos} />
+          <GetInTouchSection />
+        </StyledMain>
+      </StyledLayout>
+    </>
   );
 };
 export default Home;
@@ -102,5 +95,6 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       repos: reposWithNewData,
     },
+    revalidate: 900,
   };
 };

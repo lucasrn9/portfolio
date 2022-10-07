@@ -13,6 +13,11 @@ const StyledMenuToggle = styled.button<{sidebarOpen:boolean}>`
   font-size: 28px;
   color:${({theme})=>theme.colors.secondary} ;
   background-color: transparent;
+
+  &:focus{
+    border: 2px solid black;
+  }
+
   @media (max-width: 960px) {
     display: flex;
   }

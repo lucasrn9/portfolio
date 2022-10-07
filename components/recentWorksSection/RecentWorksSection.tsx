@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, KeyboardEvent } from "react";
 import { RecentWorksSectionProps } from "../../types/props/RecentWorksSectionProps";
 import ProjectCard from "../projectCard/ProjectCard";
 import SectionTitle from "../sectionTitle/SectionTitle";
@@ -49,6 +49,21 @@ const RecentWorksSection = ({ repos }: RecentWorksSectionProps) => {
     }));
   };
 
+  const handleEverythingFilterKeyDown = (e: KeyboardEvent<HTMLSpanElement>) => {
+    if (e.key === "Enter") {
+      toggleEverythingFilter();
+    }
+  };
+
+  const handleTagFiltersKeyDown = (
+    e: KeyboardEvent<HTMLSpanElement>,
+    position: number
+  ) => {
+    if (e.key === "Enter") {
+      toggleTagFilters(position);
+    }
+  };
+
   useEffect(() => {
     if (everythingFilter.selected && activeTagFilters.length >= 1) {
       setPagination(projectsPerPage);
@@ -67,8 +82,10 @@ const RecentWorksSection = ({ repos }: RecentWorksSectionProps) => {
 
   const EverythingFilterView = (
     <StyledFilterOption
+      tabIndex={0}
       selected={everythingFilter.selected}
       onClick={toggleEverythingFilter}
+      onKeyDown={(e) => handleEverythingFilterKeyDown(e)}
     >
       {everythingFilter.name}
     </StyledFilterOption>
@@ -76,8 +93,10 @@ const RecentWorksSection = ({ repos }: RecentWorksSectionProps) => {
 
   const TagFiltersView = tagFilters.map((tagFilter, index) => (
     <StyledFilterOption
+      tabIndex={0}
       selected={tagFilter.selected}
       onClick={() => toggleTagFilters(index)}
+      onKeyDown={(e) => handleTagFiltersKeyDown(e, index)}
       key={tagFilter.displayName}
     >
       {tagFilter.displayName}

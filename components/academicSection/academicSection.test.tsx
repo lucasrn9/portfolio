@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable @next/next/no-img-element */
 import { screen } from "@testing-library/react";
 import renderWithTheme from "../../utils/tests/renderWithTheme";
 import AcademicSection from "./AcademicSection";

@@ -25,11 +25,17 @@ const HomeSection = () => (
       <StyledName>Lucas Ribeiro</StyledName>
       <StyledOccupation>I&apos;m a Front-End developer</StyledOccupation>
       <StyledSocialMedia>
-        <a href="https://github.com/lucasrn9" target="_blank" rel="noreferrer">
+        <a
+          href="https://github.com/lucasrn9"
+          aria-label="Visit lucasrn9's github page"
+          target="_blank"
+          rel="noreferrer"
+        >
           <FontAwesomeIcon icon={faGithub} />
         </a>
         <a
           href="https://www.linkedin.com/in/lucas-ribeiro-85487920b/"
+          aria-label="Visit lucasrn9's linkedin page"
           target="_blank"
           rel="noreferrer"
         >
@@ -37,13 +43,18 @@ const HomeSection = () => (
         </a>
         <a
           href="https://mail.google.com/mail/u/0/?fs=1&to=lucas.rn00@gmail.com&tf=cm"
+          aria-label="Send lucasrn9 an email"
           target="_blank"
           rel="noreferrer"
         >
           <FontAwesomeIcon icon={faEnvelope} />
         </a>
       </StyledSocialMedia>
-      <StyledContactMe role="button" href="#getintouch">
+      <StyledContactMe
+        role="button"
+        href="#getintouch"
+        aria-label="Go to get in contact section"
+      >
         Contact Me
       </StyledContactMe>
       <Mouse />

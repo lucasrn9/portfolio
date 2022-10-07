@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable @next/next/no-img-element */
 import { screen } from "@testing-library/react";
 import HomeSection from "./HomeSection";
 import renderWithTheme from "../../utils/tests/renderWithTheme";
@@ -51,7 +52,9 @@ describe("HomeSection", () => {
 
   it("should have a contact button", () => {
     renderWithTheme(<HomeSection />);
-    const contactButton = screen.getByRole("button", { name: "Contact Me" });
+    const contactButton = screen.getByRole("button", {
+      name: "Go to get in contact section",
+    });
     expect(contactButton).toBeVisible();
   });
 });

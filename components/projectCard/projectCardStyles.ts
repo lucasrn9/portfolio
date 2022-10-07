@@ -55,9 +55,15 @@ export const StyledBubbleWrapper = styled.div`
   height: 100%;
   min-height: 240px;
   position: relative;
+  border-radius: 20px;
   * {
     color: white;
   }
+
+  &:focus{
+    border:2px solid black;
+  }
+
   @media (min-width:961px){
   &:hover{
     ${StyledContent}{

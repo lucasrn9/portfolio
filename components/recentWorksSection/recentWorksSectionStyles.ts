@@ -98,6 +98,10 @@ export const StyledViewMoreButton = styled.button`
   cursor: pointer;
   margin: 0 auto;
 
+  &:focus{
+    border: 2px solid black ;
+  }
+
   @media (min-width: 1283px) {
     transform: translateX(-65%);
   }

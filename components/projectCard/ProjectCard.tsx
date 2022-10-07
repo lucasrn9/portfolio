@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useState } from "react";
+import { useState, KeyboardEvent } from "react";
 import ProjectCardProps from "../../types/props/ProjectCardProps";
 import {
   StyledBubbleCustom,
@@ -27,9 +27,14 @@ const ProjectCard = ({
   const toggleIsActive = () => {
     setIsActive((prevState) => !prevState);
   };
+  const handleKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === "Enter") {
+      setIsActive((prevState) => !prevState);
+    }
+  };
   return (
     <StyledBubbleCustom>
-      <StyledBubbleWrapper>
+      <StyledBubbleWrapper tabIndex={0} onKeyDown={(e) => handleKeyDown(e)}>
         <StyledToggleContent
           role="button"
           isActive={isActive}
