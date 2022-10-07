@@ -14,7 +14,7 @@ const StyledMenuToggle = styled.button<{sidebarOpen:boolean}>`
   color:${({theme})=>theme.colors.secondary} ;
   background-color: transparent;
 
-  &:focus{
+  &:focus-visible{
     border: 2px solid black;
   }
 
