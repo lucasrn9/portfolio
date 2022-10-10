@@ -60,8 +60,11 @@ export const StyledBubbleWrapper = styled.div`
     color: white;
   }
 
-  &:focus{
+  &:focus-visible{
     border:2px solid black;
+  }
+  &:focus{
+    outline: none;
   }
 
   @media (min-width:961px){
