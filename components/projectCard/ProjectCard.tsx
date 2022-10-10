@@ -36,6 +36,7 @@ const ProjectCard = ({
     <StyledBubbleCustom>
       <StyledBubbleWrapper tabIndex={0} onKeyDown={(e) => handleKeyDown(e)}>
         <StyledToggleContent
+          aria-label="toggle project content"
           role="button"
           isActive={isActive}
           className={isActive ? "icon-close" : "icon-arrow-down"}
@@ -63,13 +64,15 @@ const ProjectCard = ({
             >
               <StyledLinkIcon className="icon-social-github" />
             </StyledLinkButton>
-            <StyledLinkButton
-              href={siteLink}
-              bgColor="#ffcd57"
-              data-testid="website-button"
-            >
-              <StyledLinkIcon className="icon-globe" />
-            </StyledLinkButton>
+            {siteLink && (
+              <StyledLinkButton
+                href={siteLink}
+                bgColor="#ffcd57"
+                data-testid="website-button"
+              >
+                <StyledLinkIcon className="icon-globe" />
+              </StyledLinkButton>
+            )}
           </StyledLinks>
         </StyledContent>
       </StyledBubbleWrapper>

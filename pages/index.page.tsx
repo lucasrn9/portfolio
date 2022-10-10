@@ -19,7 +19,7 @@ import { HomePageProps } from "../types/props/HomePageProps";
 import imagesAndSites from "../data/repos/imagesAndSites";
 import { StyledLayout, StyledMain } from "./indexStyles";
 
-const Home = ({ repos }: HomePageProps) => {
+const Home = ({ repos, reposAmount, githubStars }: HomePageProps) => {
   const [showSidebar, setShowSidebar] = useState(false);
   const toggleSidebar = () => {
     setShowSidebar((prevState) => !prevState);
@@ -38,7 +38,10 @@ const Home = ({ repos }: HomePageProps) => {
         <MenuToggle onClick={toggleSidebar} sidebarOpen={showSidebar} />
         <StyledMain sidebarOpen={showSidebar}>
           <HomeSection />
-          <AboutSection />
+          <AboutSection
+            projectsCompleted={reposAmount}
+            githubStars={githubStars}
+          />
           <AcademicSection />
           <RecentWorksSection repos={repos} />
           <GetInTouchSection />
@@ -50,10 +53,15 @@ const Home = ({ repos }: HomePageProps) => {
 export default Home;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const res = await fetch("https://api.github.com/users/lucasrn9/repos");
+  const res = await fetch("https://api.github.com/users/lucasrn9/repos?per_page=100");
   const reposList: GithubRepositorie[] = await res.json();
   const filteredRepos = reposList.filter((repo) =>
     repo.topics.includes("repository")
+  );
+  const reposAmount = filteredRepos.length;
+  const githubStars = reposList.reduce(
+    (prevVal, repo) => prevVal + repo.stargazers_count,
+    0
   );
   const formatedRepos = filteredRepos.map((repo) => ({
     name: repo.name,
@@ -94,6 +102,8 @@ export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       repos: reposWithNewData,
+      reposAmount,
+      githubStars,
     },
     revalidate: 900,
   };

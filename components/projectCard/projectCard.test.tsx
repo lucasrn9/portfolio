@@ -112,7 +112,7 @@ describe("ProjectCard", () => {
         repoLink="https://www.github.com"
       />
     );
-    const websiteButton = screen.getByTestId("website-button");
-    expect(websiteButton).not.toBeVisible();
+    const websiteButton = screen.queryByTestId("website-button");
+    expect(websiteButton).not.toBeInTheDocument();
   });
 });

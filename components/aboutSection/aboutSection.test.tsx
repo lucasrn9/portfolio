@@ -12,27 +12,27 @@ jest.mock("next/image", () => ({
 
 describe("AboutSection", () => {
   it("should have a h1 with the text About Me", () => {
-    renderWithTheme(<AboutSection />);
+    renderWithTheme(<AboutSection githubStars={0} projectsCompleted={0} />);
     const title = screen.getByRole("heading", { name: /About Me/ });
     expect(title).toBeVisible();
   });
   it("should have a picture", () => {
-    renderWithTheme(<AboutSection />);
+    renderWithTheme(<AboutSection githubStars={0} projectsCompleted={0} />);
     const image = screen.getByAltText("about me");
     expect(image).toBeVisible();
   });
   it("should have a download CV button", () => {
-    renderWithTheme(<AboutSection />);
+    renderWithTheme(<AboutSection githubStars={0} projectsCompleted={0} />);
     const button = screen.getByRole("button", { name: /Download CV/i });
     expect(button).toBeVisible();
   });
   it("should have a paragraph with a short description", () => {
-    renderWithTheme(<AboutSection />);
+    renderWithTheme(<AboutSection githubStars={0} projectsCompleted={0} />);
     const description = screen.getByRole("paragraph");
     expect(description).toBeVisible();
   });
   it("should have 3 badges", () => {
-    renderWithTheme(<AboutSection />);
+    renderWithTheme(<AboutSection githubStars={0} projectsCompleted={0} />);
     const badgeOne = screen.getByText(/Projects completed/i);
     const badgeTwo = screen.getByText(/Cups of Coffee/i);
     const badgeThree = screen.getByText(/Github Stars/i);
