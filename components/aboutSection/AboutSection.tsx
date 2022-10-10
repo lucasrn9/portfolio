@@ -13,8 +13,12 @@ import {
   StyledSkillsWrapper,
   StyledSpeechBubble,
 } from "./aboutSectionStyles";
+import AboutSectionProps from "../../types/props/AboutSectionProps";
 
-const AboutSection = () => {
+const AboutSection = ({
+  projectsCompleted,
+  githubStars,
+}: AboutSectionProps) => {
   const openCurriculum = () => {
     window.open("/curriculum-lucas-ribeiro.pdf");
   };
@@ -58,9 +62,17 @@ const AboutSection = () => {
           </StyledSpeechBubble>
         </StyledInformation>
         <StyledBadges>
-          <Badge name="Projects Completed" number="198" iconClass="icon-fire" />
-          <Badge name="Cups of Coffee" number="5670" iconClass="icon-cup" />
-          <Badge name="Github Stars" number="0" iconClass="icon-star" />
+          <Badge
+            name="Projects Completed"
+            number={projectsCompleted}
+            iconClass="icon-fire"
+          />
+          <Badge name="Cups of Coffee" number={5670} iconClass="icon-cup" />
+          <Badge
+            name="Github Stars"
+            number={githubStars}
+            iconClass="icon-star"
+          />
         </StyledBadges>
       </StyledContainerCustom>
     </StyledSectionCustom>

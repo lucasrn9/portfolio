@@ -1,7 +1,7 @@
 interface BadgeProps {
     name:string
     iconClass:string
-    number:string
+    number:number
 }
 
 export default BadgeProps
