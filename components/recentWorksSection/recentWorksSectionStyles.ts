@@ -58,6 +58,10 @@ export const StyledFilterOption = styled.span<{ selected?: boolean }>`
     color: white;
   }
 
+  &:focus{
+    outline: none ;
+  }
+
   ${({ selected }) =>
     selected &&
     css`
