@@ -36,6 +36,7 @@ const ProjectCard = ({
     <StyledBubbleCustom>
       <StyledBubbleWrapper tabIndex={0} onKeyDown={(e) => handleKeyDown(e)}>
         <StyledToggleContent
+          aria-label="toggle project content"
           role="button"
           isActive={isActive}
           className={isActive ? "icon-close" : "icon-arrow-down"}
