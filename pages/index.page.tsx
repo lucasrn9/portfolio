@@ -53,7 +53,7 @@ const Home = ({ repos, reposAmount, githubStars }: HomePageProps) => {
 export default Home;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const res = await fetch("https://api.github.com/users/lucasrn9/repos");
+  const res = await fetch("https://api.github.com/users/lucasrn9/repos?per_page=100");
   const reposList: GithubRepositorie[] = await res.json();
   const filteredRepos = reposList.filter((repo) =>
     repo.topics.includes("repository")
