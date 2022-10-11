@@ -125,6 +125,12 @@ const imagesAndSites = [
         "https://repository-images.githubusercontent.com/401368956/5e0ee4d7-4a5c-4b30-9381-3e214094595a",
       website_link: "",
     },
+    {
+      name: "portfolio",
+      image:
+        "https://repository-images.githubusercontent.com/522698868/9651c098-bdb5-4b3a-91c6-3c4b1df8786b",
+      website_link: "https://lucasrn9.vercel.app/",
+    },
   ]
 
   export default imagesAndSites
