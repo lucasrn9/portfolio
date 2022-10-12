@@ -79,6 +79,11 @@ height:100% ;
 min-height:fit-content ;
 }
 
+#__next{
+	display: block ;
+	overflow: auto ;
+}
+
 *{
 	box-sizing: border-box ;
 }
