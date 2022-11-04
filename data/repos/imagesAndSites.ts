@@ -104,7 +104,7 @@ const imagesAndSites = [
     {
       name: "next-tutorial",
       image:
-        "https://repository-images.githubusercontent.com/519234241/b17759d3-bf7b-49e8-997f-7cd12c08c8ea",
+        "https://repository-images.githubusercontent.com/519234241/0828bd1b-9d7b-4995-9ab2-1bf27ec7b79c",
       website_link: "",
     },
     {
