@@ -17,15 +17,15 @@ describe("HomeSection", () => {
     expect(profilePicture).toBeVisible();
   });
 
-  it("should have a title with the person name", () => {
+  it("should have a title with my first and second name", () => {
     renderWithTheme(<HomeSection />);
     const name = screen.getByRole("heading", { name: "Lucas Ribeiro" });
     expect(name).toBeVisible();
   });
 
-  it("should have an occupation", () => {
+  it("should render the job title", () => {
     renderWithTheme(<HomeSection />);
-    const occupation = screen.getByText(/I'm a Front-End developer/i);
+    const occupation = screen.getByText(/Software Developer/i);
     expect(occupation).toBeVisible();
   });
 

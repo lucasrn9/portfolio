@@ -23,7 +23,7 @@ const HomeSection = () => (
         <Image src={avatar} alt="lucas ribeiro" />
       </StyledImageWrapper>
       <StyledName>Lucas Ribeiro</StyledName>
-      <StyledOccupation>I&apos;m a Front-End developer</StyledOccupation>
+      <StyledOccupation>Software Developer</StyledOccupation>
       <StyledSocialMedia>
         <a
           href="https://github.com/lucasrn9"

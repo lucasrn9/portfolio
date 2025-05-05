@@ -45,7 +45,7 @@ const imagesAndSites = [
       name: "responsive",
       image:
         "https://repository-images.githubusercontent.com/449324055/6db7a344-a0a3-46fa-b35e-4b2c51ac98f5",
-      website_link: "",
+      website_link: "https://lucasrn9.github.io/responsive/",
     },
     {
       name: "todo-list",
@@ -63,19 +63,19 @@ const imagesAndSites = [
       name: "bootstrap-sass",
       image:
         "https://repository-images.githubusercontent.com/467909250/8afd2131-8f87-4579-842f-7b045028eb6e",
-      website_link: "",
+      website_link: "https://lucasrn9.github.io/bootstrap-sass/",
     },
     {
       name: "tenzies",
       image:
         "https://repository-images.githubusercontent.com/480465147/6aced14f-bcd1-4afe-b4fc-4ea61b0194f7",
-      website_link: "",
+      website_link: "https://tenzies-puce.vercel.app/",
     },
     {
       name: "quiz",
       image:
         "https://repository-images.githubusercontent.com/481650585/c9c6e3c4-3916-4323-837c-eae1155085f3",
-      website_link: "",
+      website_link: "https://quiz-lucasrn9.vercel.app/",
     },
     {
       name: "mini-blog-react-query",
@@ -102,7 +102,7 @@ const imagesAndSites = [
       website_link: "",
     },
     {
-      name: "next-tutorial",
+      name: "nine-store",
       image:
         "https://repository-images.githubusercontent.com/519234241/0828bd1b-9d7b-4995-9ab2-1bf27ec7b79c",
       website_link: "",
@@ -130,6 +130,18 @@ const imagesAndSites = [
       image:
         "https://repository-images.githubusercontent.com/522698868/9651c098-bdb5-4b3a-91c6-3c4b1df8786b",
       website_link: "https://lucasrn9.vercel.app/",
+    },
+    {
+      name: "alurageek",
+      image:
+        "https://repository-images.githubusercontent.com/665209496/7059257b-3513-4640-9e8a-722dad36e5e3",
+      website_link: "https://alurageek-eosin.vercel.app/",
+    },
+    {
+      name: "decodificador-de-texto",
+      image:
+        "https://repository-images.githubusercontent.com/632066516/27fc3f42-5e8b-440e-9d98-7c2f813895d7",
+      website_link: "https://lucasrn9.github.io/decodificador-de-texto/",
     },
   ]
 

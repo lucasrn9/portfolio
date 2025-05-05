@@ -21,9 +21,14 @@ describe("AboutSection", () => {
     const image = screen.getByAltText("about me");
     expect(image).toBeVisible();
   });
-  it("should have a download CV button", () => {
+  it("should have a Check My CV button", () => {
     renderWithTheme(<AboutSection githubStars={0} projectsCompleted={0} />);
-    const button = screen.getByRole("button", { name: /Download CV/i });
+    const button = screen.getByRole("button", { name: /Check My CV/i });
+    expect(button).toBeVisible();
+  });
+  it("should have a Check My ATS CV button", () => {
+    renderWithTheme(<AboutSection githubStars={0} projectsCompleted={0} />);
+    const button = screen.getByRole("button", { name: /Check My ATS CV/i });
     expect(button).toBeVisible();
   });
   it("should have a paragraph with a short description", () => {

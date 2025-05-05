@@ -116,7 +116,7 @@ const RecentWorksSection = ({ repos }: RecentWorksSectionProps) => {
 
   const filteredReposPaginated = filteredRepos.slice(0, pagination);
 
-  const allProjects = allReposPaginated.map((repo) => (
+  const allProjectsView = allReposPaginated.map((repo) => (
     <ProjectCard
       key={repo.name}
       name={repo.name}
@@ -128,7 +128,7 @@ const RecentWorksSection = ({ repos }: RecentWorksSectionProps) => {
     />
   ));
 
-  const filteredProjects = filteredReposPaginated.map((repo) => (
+  const filteredProjectsView = filteredReposPaginated.map((repo) => (
     <ProjectCard
       key={repo.name}
       name={repo.name}
@@ -154,9 +154,9 @@ const RecentWorksSection = ({ repos }: RecentWorksSectionProps) => {
     return null;
   };
 
-  const ProjectsView = everythingFilter.selected
-    ? allProjects
-    : filteredProjects;
+  const activeProjectsView = everythingFilter.selected
+    ? allProjectsView
+    : filteredProjectsView;
 
   let ViewMoreButtonView: JSX.Element | null;
 
@@ -190,7 +190,7 @@ const RecentWorksSection = ({ repos }: RecentWorksSectionProps) => {
               Use the filters above to see the projects
             </StyledProjectsMessage>
           ) : (
-            ProjectsView
+            activeProjectsView
           )}
         </StyledProjects>
         {ViewMoreButtonView}

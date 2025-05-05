@@ -12,13 +12,17 @@ const AcademicExperience = ({
   description,
   startYear,
   conclusionYear,
+  conclusionMonth,
   uncompleted,
+  inProgress,
 }: AcademicExperienceProps) => (
   <StyledAcademicExperience>
     <StyledAcademicIcon className="icon-graduation" />
     <StyledYears>
-      {startYear} - {conclusionYear}
+      {startYear && `${startYear} -`} {conclusionMonth && `${conclusionMonth}/`}
+      {conclusionYear}
       {uncompleted && <StyledUncompleted> (uncompleted)</StyledUncompleted>}
+      {inProgress && <StyledUncompleted> (in progress)</StyledUncompleted>}
     </StyledYears>
     <StyledTitle>{title}</StyledTitle>
     <p role="paragraph">{description}</p>

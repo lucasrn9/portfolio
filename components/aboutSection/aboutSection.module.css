@@ -1,0 +1,18 @@
+.atsCVBtn {
+}
+
+@media (max-width: 1840px) {
+  .atsCVBtn {
+    margin-top: 1rem;
+  }
+}
+
+.lastBadge {
+  margin-bottom: 0;
+}
+
+@media (min-width: 960px) {
+  .lastBadge {
+    margin-bottom: 3rem;
+  }
+}

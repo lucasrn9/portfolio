@@ -10,7 +10,6 @@ const Skill = ({ name, percentage, barColor, barBgColor }: SkillProps) => (
   <StyledSkill>
     <StyledInformation>
       <StyledName>{name}</StyledName>
-      <span>{percentage}%</span>
     </StyledInformation>
     <StyledProgressbar
       barBgColor={barBgColor}

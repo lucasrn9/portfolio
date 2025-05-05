@@ -41,7 +41,7 @@ const Sidebar = ({ showSidebar }: SidebarProps) => (
           </li>
         </ul>
       </StyledNavbar>
-      <StyledCopyright>&copy; 2022 - 2023.</StyledCopyright>
+      <StyledCopyright>&copy; 2022 - 2025.</StyledCopyright>
     </StyledSidebar>
   </StyledSidebarWrapper>
 );

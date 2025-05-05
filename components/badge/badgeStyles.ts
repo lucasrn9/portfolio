@@ -2,7 +2,15 @@ import styled from "styled-components";
 
 export const StyledBadge = styled.div`
   display: flex;
-  width:206px;
+  width: 206px;
+  margin-bottom: 3rem;
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: 960px) {
+    margin-bottom: 0;
+  }
 `;
 
 export const StyledText = styled.div`

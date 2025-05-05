@@ -9,6 +9,7 @@ import {
   MenuToggle,
   AcademicSection,
   GetInTouchSection,
+  CertificationsSection,
 } from "../components";
 import {
   GithubRepositorie,
@@ -43,6 +44,7 @@ const Home = ({ repos, reposAmount, githubStars }: HomePageProps) => {
             githubStars={githubStars}
           />
           <AcademicSection />
+          <CertificationsSection />
           <RecentWorksSection repos={repos} />
           <GetInTouchSection />
         </StyledMain>
@@ -53,27 +55,37 @@ const Home = ({ repos, reposAmount, githubStars }: HomePageProps) => {
 export default Home;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const res = await fetch("https://api.github.com/users/lucasrn9/repos?per_page=100");
-  const reposList: GithubRepositorie[] = await res.json();
-  const filteredRepos = reposList.filter((repo) =>
-    repo.topics.includes("repository")
+  const res = await fetch(
+    "https://api.github.com/users/lucasrn9/repos?per_page=100"
   );
-  const reposAmount = filteredRepos.length;
+  const reposList: GithubRepositorie[] = await res.json();
+  const portfolioRepos = reposList.filter((repo) =>
+    repo.topics.includes("portfolio")
+  );
+  const reposAmount = portfolioRepos.length;
   const githubStars = reposList.reduce(
     (prevVal, repo) => prevVal + repo.stargazers_count,
     0
   );
-  const formatedRepos = filteredRepos.map((repo) => ({
-    name: repo.name,
-    description: repo.description,
-    tag: repo.topics,
-    image: "",
-    repo_link: repo.html_url,
-    website_link: "",
-    created_at: repo.created_at,
-  }));
+
+  const allowedTags = ["nextjs", "react", "html-css", "nodejs"];
+
+  const formattedRepos = portfolioRepos.map((repo) => {
+    const repoTags = repo.topics.filter((tag) =>
+      allowedTags.includes(tag)
+    );
+    return {
+      name: repo.name,
+      description: repo.description,
+      tag: repoTags,
+      image: "",
+      repo_link: repo.html_url,
+      website_link: "",
+      created_at: repo.created_at,
+    };
+  });
   // @ts-ignore
-  formatedRepos.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+  formattedRepos.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
 
   const addImgAndWebsiteToRepos = (
     originalRepos: OriginalRepo[],
@@ -95,10 +107,9 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 
   const reposWithNewData = addImgAndWebsiteToRepos(
-    formatedRepos,
+    formattedRepos,
     imagesAndSites
   );
-
   return {
     props: {
       repos: reposWithNewData,

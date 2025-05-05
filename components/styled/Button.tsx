@@ -10,7 +10,7 @@ const buttonPush = keyframes`
 `;
 
 const StyledButton = styled.button`
-  padding: 0.75rem 2rem;
+  padding: 0.70rem 2rem;
   line-height: 1;
   border-radius: 1.875rem;
   box-shadow: 0 0 1px rgb(0 0 0 / 0%);

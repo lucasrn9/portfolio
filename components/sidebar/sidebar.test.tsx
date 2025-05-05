@@ -18,13 +18,13 @@ describe("Sidebar", () => {
 
   it("should display the copyright text", () => {
     renderWithTheme(<Sidebar showSidebar />);
-    const copyrightText = screen.getByText("© 2022 - 2023.");
+    const copyrightText = screen.getByText("© 2022 - 2025.");
     expect(copyrightText).toBeVisible();
   });
 
   it("should not display the copyright text in screens with width smaller or equal do 1024px", () => {
     renderWithTheme(<Sidebar showSidebar />);
-    const copyrightText = screen.getByText("© 2022 - 2023.");
+    const copyrightText = screen.getByText("© 2022 - 2025.");
     expect(copyrightText).toHaveStyleRule("display", "none", {
       media: "(max-width:1024px)",
     });

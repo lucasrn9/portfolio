@@ -14,43 +14,24 @@ const AcademicSection = () => (
       <Bubble>
         <StyledBubbleWrapper>
           <AcademicExperience
+            title="Systems Analysis and Development - International University Center - Uninter"
+            description="Algorithms, Programming Logic, OOP, Systems Design, Design Pattern, Operational Systems, Database Modeling, Data Structure, Web and Mobile Programming, Software Engineering, Cloud Computing, DevOps"
+            startYear="2025"
+            conclusionYear="2027"
+            inProgress
+          />
+          <AcademicExperience
             title="Technologist in Informatics for Business - FATEC SBC"
-            description="Algorithms and Programming Logic, Operational Systems, Database Modeling, C++ , JAVA"
+            description="Algorithms and Programming Logic, Operational Systems, Database Modeling"
             startYear="2019"
-            conclusionYear="2022"
+            conclusionYear="2021"
             uncompleted
           />
           <AcademicExperience
             title="English - Alt Idiomas"
-            description="Write and Reply to Emails, Create Presentations, intermediate level conversations."
+            description="Able to read and write documentations, participate of technical meetings, take courses and certifications in English."
             startYear="2017"
             conclusionYear="2022"
-          />
-          <AcademicExperience
-            title="Bootcamp MRV Front End SPA Developer - Digital Innovation One"
-            description="Javascript ES6, ReactJs, state management with Redux"
-            startYear="2021"
-            conclusionYear="2021"
-          />
-          <AcademicExperience
-            title="Excel Intermediate & Excel Advanced - Fundação Bradesco"
-            description="Create Reports, Spreadsheets and Dashboards using excel's main functions and filters (20h&30h)"
-            startYear="2021"
-            conclusionYear="2021"
-          />
-          <AcademicExperience
-            title="Hardware and Computers Maintenance - Líder Centro de Profissões"
-            description="Hardware and Software Maintenance, Operational Systems Installation, Formatting
-            and Optimization."
-            startYear="2018"
-            conclusionYear="2020"
-          />
-          <AcademicExperience
-            title="Windows, Office, Typing, Secretariat - OnByte Formação Profissional"
-            description="Create Reports, Spreadsheets, DashBoards, Articles and Presentations
-            using Microsoft Office's main tools."
-            startYear="2018"
-            conclusionYear="2019"
           />
         </StyledBubbleWrapper>
       </Bubble>
